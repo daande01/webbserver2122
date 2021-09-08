@@ -21,19 +21,36 @@ $artiklar = [
           ["rubrik"=>"new Holland", "pris"=>1000000,"bild"=>"bild2.jpg","beskrivning" => "en fin traktor till ett attraktivt pris" ],
           ["rubrik"=>"john deere", "pris"=>2000000,"bild"=>"bild3.jpg","beskrivning" => "fin fin" ],
           ["rubrik"=>"massey ferguson", "pris"=>1000000,"bild"=>"bild4.jpg","beskrivning" => "bäst" ],
+          ["rubrik"=>"Lamborghini", "pris"=>800000,"bild"=>"bild1.jpg","beskrivning" => "skit traktor" ],
+          ["rubrik"=>"new Holland", "pris"=>1000000,"bild"=>"bild2.jpg","beskrivning" => "en fin traktor till ett attraktivt pris" ],
+          ["rubrik"=>"john deere", "pris"=>2000000,"bild"=>"bild3.jpg","beskrivning" => "fin fin" ],
+          ["rubrik"=>"massey ferguson", "pris"=>1000000,"bild"=>"bild4.jpg","beskrivning" => "bäst" ],
+          ["rubrik"=>"massey ferguson", "pris"=>1000000,"bild"=>"bild4.jpg","beskrivning" => "bäst" ],
+          ["rubrik"=>"Lamborghini", "pris"=>800000,"bild"=>"bild1.jpg","beskrivning" => "skit traktor" ],
+          ["rubrik"=>"new Holland", "pris"=>1000000,"bild"=>"bild2.jpg","beskrivning" => "en fin traktor till ett attraktivt pris" ],
+          ["rubrik"=>"john deere", "pris"=>2000000,"bild"=>"bild3.jpg","beskrivning" => "fin fin" ],
+          ["rubrik"=>"massey ferguson", "pris"=>1000000,"bild"=>"bild4.jpg","beskrivning" => "bäst" ],
+          
           ];
 
 //var_dump($artiklar);
 
 //for ($i=0; $i < sizeof( $artiklar ); $i++) {
 
-echo"<div class=\"container\">";
+echo"<div class=\"container \">\n";
+
+
 $counter =0;
 foreach ($artiklar as $artikel) {
   
+  if ($counter%3==0){
+    echo "<div class=\"row\">";
+    
+  }
+  
 
 echo <<<ARTIKEL
-<div class="row">
+
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="bilder/{$artikel['bild']}" alt="Card image cap">
   <div class="card-body">
@@ -46,21 +63,27 @@ echo <<<ARTIKEL
         <input class="btn btn-primary" type="submit" value="Köp">
         <select name="antal" id="select"  >
             <option value="1">1</option>
-            <option value="2">1</option>
-            <option value="3">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
         </select>
     </form>    
   </div>
 </div>
-  </div>
+  
 
 ARTIKEL;
 
 $counter++;
+
+if ($counter%3==0){
+  echo "</div>";
+  
+}
 }
 
 
 echo"</div>";
+
 ?>
 
 
