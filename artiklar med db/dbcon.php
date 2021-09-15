@@ -1,15 +1,15 @@
 <?php
 
-class dbconnect {
+class dbcon {
 
 public $pdo;
 
   public function __construct(){
 
     $host = '127.0.0.1';
-    $db   = 'temp2122';
-    $user = 'temp';
-    $pass = 'temp';
+    $db   = 'artiklar2021';
+    $user = 'root';
+    $pass = '';
     $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
