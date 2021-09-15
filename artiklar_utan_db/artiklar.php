@@ -73,8 +73,8 @@ echo <<<ARTIKEL
 
 ARTIKEL;
 
-$counter++;
 
+$counter++;
 if ($counter%3==0){
   echo "</div>";
   
