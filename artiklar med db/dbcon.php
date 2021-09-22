@@ -21,10 +21,9 @@ public $pdo;
     try {
       $this->pdo = new PDO($dsn, $user, $pass, $options);
     } catch (\PDOException $e) {
-      echo 'Connection failed: ' . $e->getMessage();
+      echo 'Connection failed: ' . $e->getMessage();  
     }
-
-
+    
   }
 }
 

@@ -15,15 +15,23 @@
   <body>
     
 <?php
+session_start();
+$_SESSION["user"] = "daniel";
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
+require_once('dbcon.php');
+$db=new dbcon();
 
+$stmt=$db->pdo->query('select * from artiklar');
+
+$stmt->execute();
+
+$artiklar=$stmt->fetchAll();
 
 //var_dump($artiklar);
-
-//for ($i=0; $i < sizeof( $artiklar ); $i++) {
-
 echo"<div class=\"container \">\n";
-
 
 $counter =0;
 foreach ($artiklar as $artikel) {
@@ -32,7 +40,7 @@ foreach ($artiklar as $artikel) {
     echo "<div class=\"row\">";
     
   }
-  
+
 
 echo <<<ARTIKEL
 
