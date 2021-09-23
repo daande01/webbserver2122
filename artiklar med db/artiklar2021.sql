@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1:3306
--- Tid vid skapande: 15 sep 2021 kl 10:17
+-- Tid vid skapande: 23 sep 2021 kl 08:29
 -- Serverversion: 5.7.23
 -- PHP-version: 7.2.10
 
@@ -47,6 +47,47 @@ INSERT INTO `artiklar` (`rubrik`, `beskrivning`, `pris`, `bild`, `art_pk`) VALUE
 ('Ferguson', 'mycket trevlig traktor till ett bra pris med trepunkts lyft och 6 st dubbelverkande hydraluttag.', 300, 'bild2.jpg', 2),
 ('new holland', 'riktig skit skrot', 20, 'bild1.jpg', 3),
 ('Ferguson', 'mycket trevlig traktor till ett bra pris med trepunkts lyft och 6 st dubbelverkande hydraluttag.', 300, 'bild2.jpg', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `cart`
+--
+
+DROP TABLE IF EXISTS `cart`;
+CREATE TABLE IF NOT EXISTS `cart` (
+  `user_pk` varchar(255) NOT NULL,
+  PRIMARY KEY (`user_pk`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumpning av Data i tabell `cart`
+--
+
+INSERT INTO `cart` (`user_pk`) VALUES
+('pjcup4625ndiajlit0991l3n2t');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `cartartikel`
+--
+
+DROP TABLE IF EXISTS `cartartikel`;
+CREATE TABLE IF NOT EXISTS `cartartikel` (
+  `user_fk` varchar(255) NOT NULL,
+  `art_fk` int(255) NOT NULL,
+  `antal` int(255) NOT NULL,
+  `cartartikel_pk` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`cartartikel_pk`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumpning av Data i tabell `cartartikel`
+--
+
+INSERT INTO `cartartikel` (`user_fk`, `art_fk`, `antal`, `cartartikel_pk`) VALUES
+('pjcup4625ndiajlit0991l3n2t', 1, 2, 2);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

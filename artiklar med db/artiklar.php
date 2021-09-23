@@ -16,23 +16,22 @@
     
 <?php
 session_start();
-$_SESSION["user"] = "daniel";
+
+
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+require_once('cart.php');
 require_once('dbcon.php');
+cart();
+
 $db=new dbcon();
-
 $stmt=$db->pdo->query('select * from artiklar');
-
 $stmt->execute();
-
 $artiklar=$stmt->fetchAll();
-
 //var_dump($artiklar);
 echo"<div class=\"container \">\n";
-
 $counter =0;
 foreach ($artiklar as $artikel) {
   
@@ -40,7 +39,6 @@ foreach ($artiklar as $artikel) {
     echo "<div class=\"row\">";
     
   }
-
 
 echo <<<ARTIKEL
 
