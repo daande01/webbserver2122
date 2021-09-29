@@ -4,8 +4,8 @@
 
 <?php
 session_start();
-session_regenerate_id();
-$_SESSION['user']=session_id();
+
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -37,7 +37,7 @@ $stmt= $db->pdo->prepare($sql);
 $stmt->execute($data);
 
 
-
+header('Location: artiklar.php');
 
 ?>
 
