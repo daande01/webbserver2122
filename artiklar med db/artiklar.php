@@ -25,7 +25,8 @@
   require_once('dbcon.php');
   
   echo'<button id="cartbutton"> cart </button>';
-  echo'<div id="cart" style="display:none; position:absolute; width:400px; left:300px; top:100px; z-index:10; color:blue; background-color:black; padding:100px;">';
+  echo'<div id="cart" style="display:none; position:absolute; width:400px; left:300px; top:100px; z-index:10; color:grey; background-color:white; padding:100px;border: 2px solid;">';
+  
   cart();
   echo'</div>';
   
@@ -91,6 +92,23 @@ ARTIKEL;
     
     $('#cart').toggle();
   });
+  
+  
+  
+  $(".delete").click(function(){
+    
+    
+    
+
+      $.get( "deleteone.php", { cartartikel_pk: this.id } )
+      .done(function( data ) {
+        alert( "Data Loaded: " + data );
+      });
+  
+  });
+  
+  
+  
   
 </script>
 

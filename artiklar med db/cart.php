@@ -30,15 +30,20 @@ function cart(){
     foreach ($artiklar as $artikel) {
       
       /*<img class="card-img-top" src="bilder/{$artikel['bild']}" alt="Card image cap">*/
+    //  href="deleteone.php?cartartikel_pk={$artikel['cartartikel_pk']}"
+     
+
 echo <<<ARTIKEL
       
       
-      
-      
+      <span class="delete" id="{$artikel['cartartikel_pk']}"style="font-size:32px;float:right; text-decoration:none;"> X </span>
       <h5 class="card-title">{$artikel['rubrik']}</h5>
       <p class="card-text">{$artikel['beskrivning']}</p>
       <p class="card-text">pris: {$artikel['pris']} kr</p>
       <p class="card-text">antal: {$artikel['antal']} st</p>
+    
+      
+      
       
       
       
