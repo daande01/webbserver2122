@@ -54,9 +54,9 @@ echo <<<ARTIKEL
     <p class="card-text">pris: {$artikel['pris']} kr</p>
     
     <form action="addtocart.php" metod="get">
-    <input type="hidden" name="artikel_id" value="{$counter}">
+    <input type="hidden" name="artikel_id" value="{$artikel['art_pk']}">
     <input class="btn btn-primary" type="submit" value="Köp">
-    <select name="antal" id="select"  >
+    <select name="antal" id="select">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -97,9 +97,6 @@ ARTIKEL;
   
   $(".delete").click(function(){
     
-    
-    
-
       $.get( "deleteone.php", { cartartikel_pk: this.id } )
       .done(function( data ) {
         alert( "Data Loaded: " + data );
