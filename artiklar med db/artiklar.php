@@ -99,6 +99,10 @@ ARTIKEL;
     
       $.get( "deleteone.php", { cartartikel_pk: this.id } )
       .done(function( data ) {
+        
+         document.getElementById("cart").innerHTML = "";
+        
+        
         alert( "Data Loaded: " + data );
       });
   
