@@ -19,10 +19,10 @@ if($stmt->fetch()){
   
   $_SESSION["username"]=$user;
   echo "inloggad";
-  //header('Location:inloggad.php');
+  header('Location:inloggad.php');
 }else{
   
-//  header('Location:index.php');
+  header('Location:index.php');
 }
 
 

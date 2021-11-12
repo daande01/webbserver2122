@@ -1,0 +1,59 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
+--
+-- Värd: 127.0.0.1:3306
+-- Tid vid skapande: 12 nov 2021 kl 08:27
+-- Serverversion: 5.7.23
+-- PHP-version: 7.2.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Databas: `angeltest`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `username` varchar(255) NOT NULL,
+  `user_pk` int(255) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`user_pk`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Dumpning av Data i tabell `users`
+--
+
+INSERT INTO `users` (`username`, `user_pk`) VALUES
+('test1', 1),
+('test2', 2),
+('daniel', 3),
+('TEST10', 4),
+('fdfd', 5),
+('dfds', 6),
+('hjgh', 7),
+('test', 8),
+('', 9),
+('daniel', 10),
+('daniel', 11),
+('angel', 12);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
