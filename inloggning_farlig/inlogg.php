@@ -2,7 +2,7 @@
 session_start();
 require('dbconnect.php');
 
-$dbcon=new dbconnect();
+$dbcon=new dbcon();
 
 $user=$_REQUEST['username'];
 $pass=$_REQUEST['password'];
