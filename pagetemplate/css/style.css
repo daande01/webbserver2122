@@ -5,3 +5,9 @@ header{
   border: 1px dotted green;
   
 }
+main{
+  
+  height: 600px;
+  width: 100vw;
+  background-color: pink;
+}
