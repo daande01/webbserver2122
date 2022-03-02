@@ -25,6 +25,10 @@ public $pdo;
     }
     
   }
+  
+  public function select()
+  
+  
 }
 
     ?>
